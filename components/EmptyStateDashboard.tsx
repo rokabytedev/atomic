@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function EmptyStateDashboard() {
   return (
     <div className="relative flex size-full min-h-screen flex-col bg-gray-50 group/design-root overflow-x-hidden" style={{fontFamily: 'Inter, "Noto Sans", sans-serif'}}>
@@ -19,9 +21,9 @@ export default function EmptyStateDashboard() {
                 Small changes can make a big difference. Create your first habit and start building a better you, one day at a time.
               </p>
             </div>
-            <button className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#f97306] text-white text-base font-bold leading-normal shadow-lg hover:bg-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-all duration-300">
+            <Link href="/create" className="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-12 px-6 bg-[#f77c18] text-white text-base font-bold leading-normal shadow-lg hover:bg-[#f77c18]/90 focus:outline-none focus:ring-2 focus:ring-[#f77c18] focus:ring-offset-2 transition-all duration-300">
               <span className="truncate">Create My First Habit</span>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
