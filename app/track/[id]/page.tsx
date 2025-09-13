@@ -108,13 +108,13 @@ export default function TrackHabitPage() {
     const sortedCheckins = habit.checkins.sort((a, b) => b.localeCompare(a));
     let streak = 0;
     const today = new Date();
-    let currentDate = new Date(today);
+    const currentCheckDate = new Date(today);
     
     for (let i = 0; i < sortedCheckins.length; i++) {
-      const dateString = currentDate.toISOString().split('T')[0];
+      const dateString = currentCheckDate.toISOString().split('T')[0];
       if (sortedCheckins.includes(dateString)) {
         streak++;
-        currentDate.setDate(currentDate.getDate() - 1);
+        currentCheckDate.setDate(currentCheckDate.getDate() - 1);
       } else {
         break;
       }
