@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Atomic Habit Coach - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style type="text/tailwindcss">
+    :root {
+      --orange: #f77c18;
+      --mint-green: #a7e0c2;
+      --light-gray: #f3f4f6;
+      --dark-gray: #4b5563;
+      --neutral-bg: #ffffff;
+      --text-color: #1f2937;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--neutral-bg);
+      color: var(--text-color);
+    }
+    .btn-primary {
+      @apply bg-[var(--orange)] text-white font-semibold py-2 px-4 rounded-lg shadow-sm hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[var(--orange)];
+    }
+    .habit-card {
+      @apply bg-white border border-[var(--light-gray)] rounded-lg p-6 shadow-sm transition-all duration-300 hover:shadow-md;
+    }
+    .checkbox-container {
+        @apply relative w-8 h-8 flex-shrink-0;
+    }
+    .checkbox {
+      @apply appearance-none w-8 h-8 rounded-full border-2 border-[var(--orange)] cursor-pointer transition-all duration-300 checked:bg-[var(--mint-green)] checked:border-[var(--mint-green)];
+    }
+    .checkbox-checkmark {
+        @apply absolute inset-0 hidden items-center justify-center text-white;
+    }
+    .checkbox:checked + .checkbox-checkmark {
+        @apply flex;
+    }
+  </style>
+</head>
+<body class="antialiased">
+<div class="min-h-screen bg-gray-50">
+<header class="bg-white shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center py-4">
+<h1 class="text-xl font-bold text-gray-800">Atomic Habit Coach</h1>
+<button class="btn-primary flex items-center gap-2">
+<svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" fill-rule="evenodd"></path>
+</svg>
+<span>New Habit</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Your Habits for Today</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="habit-card">
+<div class="flex items-center justify-between">
+<div class="flex-grow">
+<h3 class="font-bold text-lg text-gray-800">Read 10 pages</h3>
+<p class="text-sm text-gray-500 mt-1">Become a reader</p>
+</div>
+<div class="checkbox-container">
+<input checked="" class="checkbox" id="habit1" type="checkbox"/>
+<div class="checkbox-checkmark">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="habit-card">
+<div class="flex items-center justify-between">
+<div class="flex-grow">
+<h3 class="font-bold text-lg text-gray-800">Meditate for 5 minutes</h3>
+<p class="text-sm text-gray-500 mt-1">Become a calm person</p>
+</div>
+<div class="checkbox-container">
+<input class="checkbox" id="habit2" type="checkbox"/>
+<div class="checkbox-checkmark">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="habit-card">
+<div class="flex items-center justify-between">
+<div class="flex-grow">
+<h3 class="font-bold text-lg text-gray-800">Go for a 20-min walk</h3>
+<p class="text-sm text-gray-500 mt-1">Become a healthy person</p>
+</div>
+<div class="checkbox-container">
+<input checked="" class="checkbox" id="habit3" type="checkbox"/>
+<div class="checkbox-checkmark">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="habit-card">
+<div class="flex items-center justify-between">
+<div class="flex-grow">
+<h3 class="font-bold text-lg text-gray-800">Drink 8 glasses of water</h3>
+<p class="text-sm text-gray-500 mt-1">Become a hydrated person</p>
+</div>
+<div class="checkbox-container">
+<input class="checkbox" id="habit4" type="checkbox"/>
+<div class="checkbox-checkmark">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+<div class="habit-card">
+<div class="flex items-center justify-between">
+<div class="flex-grow">
+<h3 class="font-bold text-lg text-gray-800">Journal one sentence</h3>
+<p class="text-sm text-gray-500 mt-1">Become a reflective person</p>
+</div>
+<div class="checkbox-container">
+<input class="checkbox" id="habit5" type="checkbox"/>
+<div class="checkbox-checkmark">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

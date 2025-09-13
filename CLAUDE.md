@@ -1,0 +1,1 @@
+- Implment plan.md step by step. Follow the steps in the Priority Order section. Only focus on one step from the plan.md at a time.
