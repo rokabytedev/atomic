@@ -105,15 +105,16 @@ export default function TrackHabitPage() {
   const calculateStreak = () => {
     if (!habit || habit.checkins.length === 0) return 0;
     
-    const sortedCheckins = habit.checkins.sort().reverse();
+    const sortedCheckins = habit.checkins.sort((a, b) => b.localeCompare(a));
     let streak = 0;
-    const streakDate = new Date();
+    const today = new Date();
+    let currentDate = new Date(today);
     
     for (let i = 0; i < sortedCheckins.length; i++) {
-      const checkinDate = streakDate.toISOString().split('T')[0];
-      if (sortedCheckins.includes(checkinDate)) {
+      const dateString = currentDate.toISOString().split('T')[0];
+      if (sortedCheckins.includes(dateString)) {
         streak++;
-        streakDate.setDate(streakDate.getDate() - 1);
+        currentDate.setDate(currentDate.getDate() - 1);
       } else {
         break;
       }

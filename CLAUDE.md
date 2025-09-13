@@ -1,1 +1,2 @@
 - Implment plan.md step by step. Follow the steps in the Priority Order section. Only focus on one step from the plan.md at a time.
+- Mark a step as done when it is completed and no build error after running dev server.
