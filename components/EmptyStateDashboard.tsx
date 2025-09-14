@@ -11,9 +11,9 @@ export default function EmptyStateDashboard() {
         </header>
         <div className="flex flex-1 items-center justify-center p-8">
           <div className="flex max-w-lg flex-col items-center gap-8 text-center">
-            <div 
-              className="bg-center bg-no-repeat aspect-square bg-contain w-full max-w-[280px]" 
-              style={{backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuDU24GmSaN9eaq2HfWTT4qkfno8Of8ayjQCYWXhnEuzS1YKF5ZpceCx4_5L07X2FnPSZ4q5lahi6Yd8-CfcYSpoJll2cQxEVVJTxuPZhMJ5P1JzCPmxqCHy6YfJ1nVwjud5iilAVspCGRlWIvSGObdvehy1IXT_yxWxtqSJbidrNS69_iqTohRe9h3IJnWUf0E5E1dO3ip7kHKEBmp7QIWqh0CIlTucCAH5Skib1B1VYVEz1EcJcKuhN_l_RG85JySFT59OE0epp0Ub")'}}
+            <div
+              className="bg-center bg-no-repeat aspect-square bg-contain w-full max-w-[280px]"
+              style={{backgroundImage: 'url("/hero.png")'}}
             ></div>
             <div className="flex flex-col items-center gap-4">
               <h1 className="text-5xl font-bold tracking-tighter text-gray-900">Your journey starts here.</h1>

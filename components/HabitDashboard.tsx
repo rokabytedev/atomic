@@ -26,18 +26,18 @@ export default function HabitDashboard({ habits, setHabits }: HabitDashboardProp
       if (habit.id === habitId) {
         const checkins = [...habit.checkins];
         const todayIndex = checkins.indexOf(today);
-        
+
         if (todayIndex > -1) {
           checkins.splice(todayIndex, 1);
         } else {
           checkins.push(today);
         }
-        
+
         return { ...habit, checkins };
       }
       return habit;
     });
-    
+
     setHabits(updatedHabits);
     localStorage.setItem('habits', JSON.stringify(updatedHabits));
   };
@@ -72,13 +72,17 @@ export default function HabitDashboard({ habits, setHabits }: HabitDashboardProp
                     <h3 className="font-bold text-lg text-gray-800">{habit.habitAction}</h3>
                     <p className="text-sm text-gray-500 mt-1">{habit.identity}</p>
                   </div>
-                  <div className="relative w-8 h-8 flex-shrink-0" onClick={(e) => e.preventDefault()}>
-                    <input 
-                      checked={isCheckedToday(habit)}
-                      className="appearance-none w-8 h-8 rounded-full border-2 border-[#f77c18] cursor-pointer transition-all duration-300 checked:bg-[#a7e0c2] checked:border-[#a7e0c2]" 
-                      id={`habit-${habit.id}`} 
-                      type="checkbox"
-                      onChange={() => handleCheckIn(habit.id)}
+                  <div className="relative w-8 h-8 flex-shrink-0" onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    handleCheckIn(habit.id);
+                  }}>
+                    <div
+                      className={`w-8 h-8 rounded-full border-2 cursor-pointer transition-all duration-300 ${
+                        isCheckedToday(habit)
+                          ? 'bg-[#a7e0c2] border-[#a7e0c2]'
+                          : 'border-[#f77c18] bg-transparent'
+                      }`}
                     />
                     {isCheckedToday(habit) && (
                       <div className="absolute inset-0 flex items-center justify-center text-white pointer-events-none">
